@@ -38,11 +38,9 @@ const PostsContent = ({ post }) => {
       const { className, children } = code;
       const match = /language-(\w+)/.exec(className || "");
       return (
-        <SyntaxHighlighter
-          language={match[1]}
-          style={atomDark}
-          children={children}
-        />
+        <SyntaxHighlighter language={match[1]} style={atomDark}>
+          {children}
+        </SyntaxHighlighter>
       );
     },
   };
